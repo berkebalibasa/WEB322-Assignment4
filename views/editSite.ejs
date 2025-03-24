@@ -1,0 +1,67 @@
+<%- include('partials/navbar', { page: '' }) %>
+
+<h1>Edit Site: <%= site.site %></h1>
+
+<form action="/editSite" method="POST" class="container">
+  <input type="hidden" name="siteId" value="<%= site.siteId %>" />
+
+  <div class="mb-3">
+    <label>Site Name:</label>
+    <input type="text" name="site" value="<%= site.site %>" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label>Description:</label>
+    <textarea name="description" class="form-control"><%= site.description %></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label>Province Code:</label>
+    <input type="text" name="provinceOrTerritoryCode" value="<%= site.provinceOrTerritoryCode %>" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label>Location:</label>
+    <input type="text" name="location" value="<%= site.location %>" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label>Date:</label>
+    <input type="number" name="date" value="<%= site.date %>" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label>Date Type:</label>
+    <input type="text" name="dateType" value="<%= site.dateType %>" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label>Designated:</label>
+    <input type="number" name="designated" value="<%= site.designated %>" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label>Image URL:</label>
+    <input type="text" name="image" value="<%= site.image %>" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label>Latitude:</label>
+    <input type="number" step="any" name="latitude" value="<%= site.latitude %>" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label>Longitude:</label>
+    <input type="number" step="any" name="longitude" value="<%= site.longitude %>" class="form-control" />
+  </div>
+
+  <div class="form-check mb-3">
+    <input type="checkbox" name="worldHeritageSite" value="true" class="form-check-input"
+      <%= site.worldHeritageSite ? "checked" : "" %> />
+    <label class="form-check-label">World Heritage Site?</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update Site</button>
+</form>
+
+<a href="/deleteSite/<%= site.siteId %>" class="btn btn-danger">Delete This Site</a>

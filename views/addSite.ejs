@@ -1,0 +1,59 @@
+<%- include('partials/navbar', { page: 'Add' }) %>
+
+<h1>Add a New Site</h1>
+
+<form action="/addSite" method="POST" class="container">
+  <div class="mb-3">
+    <label>Site ID:</label>
+    <input type="text" name="siteId" required class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>Site Name:</label>
+    <input type="text" name="site" required class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>Description:</label>
+    <textarea name="description" class="form-control"></textarea>
+  </div>
+  <div class="mb-3">
+    <label>Province Code:</label>
+    <input type="text" name="provinceOrTerritoryCode" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>Region (just for info):</label>
+    <input type="text" disabled class="form-control" value="Automatically linked" />
+  </div>
+  <div class="mb-3">
+    <label>Location:</label>
+    <input type="text" name="location" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>Date:</label>
+    <input type="number" name="date" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>Date Type:</label>
+    <input type="text" name="dateType" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>Designated Year:</label>
+    <input type="number" name="designated" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>Image URL:</label>
+    <input type="text" name="image" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>Latitude:</label>
+    <input type="number" step="any" name="latitude" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label>Longitude:</label>
+    <input type="number" step="any" name="longitude" class="form-control" />
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" name="worldHeritageSite" class="form-check-input" value="true" />
+    <label class="form-check-label">Is World Heritage Site?</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Add Site</button>
+</form>

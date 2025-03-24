@@ -1,0 +1,29 @@
+<%- include('partials/navbar', { page: 'Sites' }) %>
+
+<h1>Site Collection (<%= sites.length %>)</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Site</th>
+      <th>Location</th>
+      <th>Province</th>
+      <th>Region</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% sites.forEach(site => { %>
+      <tr>
+        <td><%= site.site %></td>
+        <td><%= site.location %></td>
+        <td><%= site.ProvinceOrTerritory ? site.ProvinceOrTerritory.name : 'N/A' %></td>
+        <td><%= site.ProvinceOrTerritory ? site.ProvinceOrTerritory.region : 'N/A' %></td>
+        <td>
+          <a href="/editSite/<%= site.siteId %>" class="btn btn-sm btn-warning">Edit</a>
+          <a href="/deleteSite/<%= site.siteId %>" class="btn btn-sm btn-danger">Delete</a>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
